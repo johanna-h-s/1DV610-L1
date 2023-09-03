@@ -132,11 +132,17 @@ customElements.define(
       }
     }
 
+    /**
+     * Distorts and returns the players nickname along with a message.
+     *
+     * @param {string} name the name to distort.
+     */
     #distortNickname(name) {
       let newName = "";
       let message = "";
       let randomNumber = Math.floor(Math.random() * 10) + 1;
 
+      // Change name to display in reverse.
       const nameInReverse = (name) => {
         // Change the letters of the name to display backwards.
         for (const c of name) {
@@ -148,6 +154,7 @@ customElements.define(
         return newName;
       };
 
+      // Change name to display in rövarspråket.
       const nameInRovarspraket = (name) => {
         // Make the name display in rövarspråket.
         for (const c of name) {
@@ -161,6 +168,7 @@ customElements.define(
         message = ", as your name is pronounced in Rövarspråket.";
       };
 
+      // Decide how to change name.
       switch (true) {
         case randomNumber >= 5:
           nameInRovarspraket(name);
