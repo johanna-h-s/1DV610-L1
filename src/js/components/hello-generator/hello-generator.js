@@ -134,24 +134,45 @@ customElements.define(
 
     #distortNickname(name) {
       let newName = "";
+      let message = "";
+      let randomNumber = Math.floor(Math.random() * 10) + 1;
 
-      // Change the letters of the name to display backwards.
-      /* for (const c of name) {
-        newName = c + newName;
-      } */
-
-      // Make the name display in rövarspråket.
-      for (const c of name) {
-        if (/^[aeiouAEIOU]$/.test(c)) {
-          newName = newName + c;
-        } else {
-          newName = newName + c + "o" + c;
+      const nameInReverse = (name) => {
+        // Change the letters of the name to display backwards.
+        for (const c of name) {
+          newName = c + newName;
         }
+
+        message = ", as your name is spelled in reverse.";
+
+        return newName;
+      };
+
+      const nameInRovarspraket = (name) => {
+        // Make the name display in rövarspråket.
+        for (const c of name) {
+          if (/^[aeiouAEIOU]$/.test(c)) {
+            newName = newName + c;
+          } else {
+            newName = newName + c + "o" + c;
+          }
+        }
+
+        message = ", as your name is pronounced in Rövarspråket.";
+      };
+
+      switch (true) {
+        case randomNumber >= 5:
+          nameInRovarspraket(name);
+          break;
+        case randomNumber < 5:
+          nameInReverse(name);
+          break;
+        default:
+          console.log("Oh no!");
       }
 
-      console.log(newName);
-
-      return newName + ", as your name is pronounced in rövarspråket.";
+      return newName + message;
     }
   }
 );
