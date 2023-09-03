@@ -128,7 +128,7 @@ customElements.define(
         this.#nicknameMessage.textContent = `Hello ${greeting}`;
       } else {
         this.#nicknameMessage.textContent =
-          "Your name can only consist of the letters a-z.";
+          "Your name can only consist of the letters a-z (sorry Åsa, Ängla, Örjan and Øjvind).";
       }
     }
 
@@ -140,7 +140,7 @@ customElements.define(
     #distortNickname(name) {
       let newName = "";
       let message = "";
-      let randomNumber = Math.floor(Math.random() * 10) + 1;
+      let randomNumber = Math.floor(Math.random() * 3) + 1;
 
       // Change name to display in reverse.
       const nameInReverse = (name) => {
@@ -150,8 +150,14 @@ customElements.define(
         }
 
         message = ", as your name is spelled in reverse.";
+      };
 
-        return newName;
+      // Change name to a saint-like one.
+      const nameAsSaint = (name) => {
+        newName = "St. " + name;
+
+        message =
+          ", as you'd been called if you'd done something great (and perhaps a bit bogus) for humanity.";
       };
 
       // Change name to display in rövarspråket.
@@ -170,10 +176,13 @@ customElements.define(
 
       // Decide how to change name.
       switch (true) {
-        case randomNumber >= 5:
+        case randomNumber === 1:
           nameInRovarspraket(name);
           break;
-        case randomNumber < 5:
+        case randomNumber === 2:
+          nameAsSaint(name);
+          break;
+        case randomNumber === 3:
           nameInReverse(name);
           break;
         default:
