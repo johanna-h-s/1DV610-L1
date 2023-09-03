@@ -4,3 +4,5 @@
  * @author Johanna Stenbeck <js226rv@student.lnu.se>
  * @version 1.1.0
  */
+
+import "./components/hello-generator/index.js";

@@ -1,1 +1,1 @@
-import "./lyrical-hello.js";
+import "./hello-generator.js";

@@ -1,0 +1,14 @@
+body {
+	background: #888bbb;
+    font-family: Helvetica, Sans-Serif;
+	height: 99%;
+}
+
+html {
+	height: 99%;
+}
+
+#wrapper {
+	display: flex;
+
+}
