@@ -42,7 +42,7 @@ template.innerHTML = `
   }
   </style>
   <div id="wrapper">
-    <div class="title">A SMALL HELLO</div>
+    <div class="title">A MINIMAL HELLO</div>
     
     <nickname-form></nickname-form>
     

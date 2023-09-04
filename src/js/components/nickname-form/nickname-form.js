@@ -64,7 +64,7 @@ template.innerHTML = `
   </style>
   <form id="nickname">
     <label>Enter your name</label>
-    <input id="nickname-input" type="text" placeholder="Your name" autofocus required>
+    <input id="nickname-input" type="text" placeholder="Your name" autocomplete="off" autofocus required>
     <button id="nickname-save" type="submit">Submit</button>
   </form>
 `;
